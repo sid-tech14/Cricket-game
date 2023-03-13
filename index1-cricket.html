@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="teams-page-style.css">
+    <title>Lets Play Cricket!</title>
+</head>
+
+<body>
+    <div class="teams-container">
+        <div class="team-a">
+            <h2>Team-A</h2>
+            <ol>
+                <li>Player 1</li>
+                <li>Player 2</li>
+                <li>Player 3</li>
+                <li>Player 4</li>
+                <li>Player 5</li>
+            </ol>
+        </div>
+
+        <div>
+            <div class="team-b">
+                <h2>Team-B</h2>
+                <ol>
+                    <li>Player 1</li>
+                    <li>Player 2</li>
+                    <li>Player 3</li>
+                    <li>Player 4</li>
+                    <li>Player 5</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="heading">
+        <h1>Team-A VS Team-B</h1>
+    </div>
+    <button id="toss" class="toss-btn" onclick="startGame()" >Lets Toss</button>
+
+    <div>
+        <h2 class="toss-win" id="tossWinner" onclick=""></h2>
+        <h2 id="tossWin" class="toss-winner">has won the toss and will bat first.</h2>
+     </div>
+
+    <script>
+        const TEAM_1 = 'Team 1';
+const TEAM_2 = 'Team 2';
+const TOTAL_OVERS = 5;
+const TOTAL_PLAYERS = 5;
+
+let team1Score = 0;
+let team2Score = 0;
+let team1Batsmen = 0;
+let team2Batsmen = 0;
+let team1Wickets = 0;
+let team2Wickets = 0;
+let team1Overs = 0;
+let team2Overs = 0;
+
+// Function to simulate a coin toss
+function coinToss() {
+  return Math.floor(Math.random() * 2) === 0 ? TEAM_1 : TEAM_2;
+}
+
+// Function to simulate a ball
+function simulateBall() {
+  return Math.floor(Math.random() * 10);
+}
+
+// Function to simulate a team's innings
+function playInnings(team) {
+  let score = 0;
+  let wickets = 0;
+  let overs = 0;
+  let batsmen = 1;
+
+  while (overs < TOTAL_OVERS && wickets < TOTAL_PLAYERS) {
+    const runs = simulateBall();
+
+    if (runs === 0) {
+      wickets++;
+      batsmen++;
+
+      if (batsmen > TOTAL_PLAYERS) {
+        break;
+      }
+    } else {
+      score += runs;
+    }
+
+    overs += 1;
+  }
+
+  if (team === TEAM_1) {
+    team1Score = score;
+    team1Wickets = wickets;
+    team1Overs = overs;
+    team2Batsmen = 1;
+  } else {
+    team2Score = score;
+    team2Wickets = wickets;
+    team2Overs = overs;
+  }
+}
+
+// Function to start the game
+function startGame() {
+  const tossWinner = coinToss();
+  const tossLoser = tossWinner === TEAM_1 ? TEAM_2 : TEAM_1;
+
+  console.log(`The toss was won by ${tossWinner}.`);
+  document.getElementById('tossWinner').style.display = 'inline' 
+  document.getElementById('tossWin').style.display = 'inline'
+  document.getElementById('tossWinner').innerHTML =  tossWinner; 
+  document.getElementById('tossWin').innerHTML = firstInningsTeam;
+
+
+
+  const firstInningsTeam = tossWinner;
+  const secondInningsTeam = tossLoser;
+
+  console.log(`${firstInningsTeam} will bat first.`);
+}
+    </script>
+</body>
+
+</html>

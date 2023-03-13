@@ -1,0 +1,83 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('Cricket-Stadium.jpg');
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Rubik Iso', cursive;
+    font-family: 'Titan One', cursive;
+}
+
+.main-heading{
+    background-color: black;
+    padding: 15px;
+    color: wheat;
+}
+
+.sub-head {
+color: #915f00;
+padding: 6rem;
+font-size: 3rem;
+margin-bottom: 5px;
+text-decoration-style: solid ;
+
+}
+
+.play-btn {
+    font-family: 'Fredoka One', cursive;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Rubik Iso', cursive;
+    font-family: 'Titan One', cursive;
+    padding: 1rem 4.5rem;
+    font-size: 2rem;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    border-style: none;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+
+.play-btn:hover {
+    cursor: pointer;
+    color: white;
+    background-color: greenyellow;
+
+}
+
+@media (max-width: 500px) {
+    body {
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 60vh;
+    }
+
+    .main-heading{
+        background-color: black;
+        font-size: 1.1rem;
+        color: wheat;
+    }
+
+    .sub-head {
+        font-size: 24px;
+        margin-bottom: 0;
+        margin-top: 62% !important;
+        margin: 0;
+        padding: 0;
+        
+        }
+
+        .play-btn {
+           margin-top: 15px;
+           padding: 8px 25px;
+           font-size: 20px;
+        }
+}
